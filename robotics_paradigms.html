@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Robotics Research Paradigms</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #fafbfc;
+            margin: 2rem;
+        }
+        h1 {
+            color: #26547c;
+            font-size: 2rem;
+        }
+        .paradigm-desc {
+            margin-bottom: 1.5rem;
+        }
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin-top: 1rem;
+            background: #fff;
+        }
+        th, td {
+            border: 1px solid #d1d5db;
+            padding: 0.75rem 1rem;
+            text-align: left;
+        }
+        th {
+            background-color: #e5ecf6;
+            color: #26547c;
+        }
+        tr:nth-child(even) {
+            background-color: #f4f7fa;
+        }
+    </style>
+</head>
+<body>
+    <h1>Robotics Paradigms (Without HCI)</h1>
+    
+    <div class="paradigm-desc">
+        <strong>Robotics paradigms</strong> describe the main approaches to robot design and control, focusing on how robots sense, decide, and act. Here are the three classic paradigms:
+    </div>
+    
+    <ul>
+        <li>
+            <strong>Sense-Plan-Act (SPA) Paradigm:</strong>
+            The robot perceives its environment, creates a plan, then acts. Good for structured, step-by-step tasks.
+        </li>
+        <li>
+            <strong>Reactive Paradigm:</strong>
+            The robot reacts instantly to sensor inputs with predefined actions, without internal planning. Useful for fast, simple responses.
+        </li>
+        <li>
+            <strong>Hybrid Paradigm:</strong>
+            The robot combines both reactive behaviors and planning. Balances quick responses with intelligent decision-making.
+        </li>
+    </ul>
+    
+    <table>
+        <tr>
+            <th>Paradigm</th>
+            <th>Key Idea</th>
+            <th>Example</th>
+        </tr>
+        <tr>
+            <td>Sense-Plan-Act</td>
+            <td>Perceive → Plan → Act</td>
+            <td>Path planning in a warehouse</td>
+        </tr>
+        <tr>
+            <td>Reactive</td>
+            <td>Immediate response to sensor data</td>
+            <td>Obstacle avoidance on a rover</td>
+        </tr>
+        <tr>
+            <td>Hybrid</td>
+            <td>Mix of planning and reacting</td>
+            <td>Search-and-rescue robots</td>
+        </tr>
+    </table>
+</body>
+</html>
