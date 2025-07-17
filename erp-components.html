@@ -4,21 +4,25 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>ERP Components</title>
+  <meta name="description" content="A latency-sorted reference of ERP components with their functional associations, based on the ERP Book by Steven J. Luck.">
+  <meta name="robots" content="index, follow">
+  <meta name="author" content="PKR">
+  <link rel="canonical" href="https://routrayLab.github.io/erp-components.html">
   <style>
     body {
       font-family: Arial, sans-serif;
       line-height: 1.6;
       margin: 2em;
-      background-color: #f9f9f9;
+      background-color: #fefefe;
       color: #333;
     }
-    h1, h2 {
+    h1 {
       color: #004080;
     }
     table {
       width: 100%;
       border-collapse: collapse;
-      margin-top: 1em;
+      margin-top: 1.5em;
     }
     th, td {
       padding: 0.75em;
@@ -29,8 +33,8 @@
       background-color: #e0e0e0;
     }
     caption {
-      caption-side: top;
       font-weight: bold;
+      font-size: 1.2em;
       margin-bottom: 0.5em;
     }
     footer {
@@ -45,44 +49,44 @@
 </head>
 <body>
 
-  <h1>ERP Components</h1>
-  <p>This page summarizes common Event-Related Potential (ERP) components including their polarity, latency, order in the waveform, and functional associations. This guide is based on <em>An Introduction to the Event-Related Potential Technique</em> by Steven J. Luck (2nd edition).</p>
+  <h1>ERP Components (Sorted by Latency)</h1>
+  <p>This reference table lists ERP components in order of their typical onset latency, providing key information on polarity, cognitive function, and component characteristics. Based on the book by Steven J. Luck.</p>
 
   <table>
-    <caption>Common ERP Components</caption>
+    <caption>Latency-Sorted ERP Components</caption>
     <thead>
       <tr>
         <th>Component</th>
         <th>Polarity</th>
         <th>Latency (ms)</th>
-        <th>Sequence Order</th>
         <th>Function / Association</th>
         <th>Notes</th>
       </tr>
     </thead>
     <tbody>
-      <tr><td>C1</td><td>Varies</td><td>50–90</td><td>Earliest</td><td>Early visual (V1)</td><td>Polarity depends on upper/lower field</td></tr>
-      <tr><td>P1 (P100)</td><td>Positive</td><td>80–130</td><td>1st positive</td><td>Visual sensory processing</td><td>Attention-sensitive</td></tr>
-      <tr><td>N1 (N100)</td><td>Negative</td><td>90–150</td><td>1st negative</td><td>Attention & discrimination</td><td>Visual and auditory</td></tr>
-      <tr><td>N2pc</td><td>Negative</td><td>180–300</td><td>Posterior-lateral</td><td>Spatial attention</td><td>Contralateral – ipsilateral</td></tr>
-      <tr><td>P2</td><td>Positive</td><td>150–250</td><td>2nd positive</td><td>Feature detection</td><td>Perceptual salience</td></tr>
-      <tr><td>N2</td><td>Negative</td><td>200–350</td><td>2nd negative</td><td>Conflict detection</td><td>No-go, mismatch</td></tr>
-      <tr><td>CDA</td><td>Negative</td><td>300–1000+</td><td>Sustained</td><td>Working memory</td><td>Lateralized; contralateral delay</td></tr>
-      <tr><td>P3 / P300</td><td>Positive</td><td>300–600</td><td>3rd positive</td><td>Attention, memory update</td><td>P3a (frontal), P3b (parietal)</td></tr>
-      <tr><td>N400</td><td>Negative</td><td>~400</td><td>Semantic</td><td>Language, meaning</td><td>Central-parietal</td></tr>
-      <tr><td>LPP</td><td>Positive</td><td>400–1000+</td><td>Late positive</td><td>Emotion, affective salience</td><td>Sustained positivity</td></tr>
-      <tr><td>ERN / Ne</td><td>Negative</td><td>0–100 post-response</td><td>Post-response</td><td>Error detection</td><td>Frontocentral</td></tr>
-      <tr><td>Pe</td><td>Positive</td><td>200–400 post-response</td><td>After ERN</td><td>Conscious error awareness</td><td>Parietal</td></tr>
-      <tr><td>CNV</td><td>Negative</td><td>-500 to 0</td><td>Pre-stimulus</td><td>Anticipation</td><td>Slow-building</td></tr>
-      <tr><td>LRP</td><td>Varies</td><td>~200–400</td><td>Motor prep</td><td>Response selection</td><td>Contralateral motor cortex</td></tr>
-      <tr><td>MMN</td><td>Negative</td><td>100–250</td><td>Mismatch</td><td>Auditory deviance</td><td>Passive listening</td></tr>
-      <tr><td>SPN</td><td>Negative</td><td>–1000 to 0</td><td>Pre-feedback</td><td>Anticipation of outcomes</td><td>Motivational relevance</td></tr>
+      <tr><td>C1</td><td>Varies</td><td>50–90</td><td>Primary visual processing (V1)</td><td>Polarity depends on stimulus location</td></tr>
+      <tr><td>P1 (P100)</td><td>Positive</td><td>80–130</td><td>Early visual perception</td><td>Attention-sensitive</td></tr>
+      <tr><td>N1 (N100)</td><td>Negative</td><td>90–150</td><td>Early attention, discrimination</td><td>Multimodal</td></tr>
+      <tr><td>MMN</td><td>Negative</td><td>100–250</td><td>Auditory mismatch detection</td><td>Passive, pre-attentive</td></tr>
+      <tr><td>P2</td><td>Positive</td><td>150–250</td><td>Perceptual categorization</td><td>Feature-based salience</td></tr>
+      <tr><td>N170</td><td>Negative</td><td>150–200</td><td>Face and object processing</td><td>Occipito-temporal</td></tr>
+      <tr><td>N2pc</td><td>Negative</td><td>180–300</td><td>Spatial attention (contralateral)</td><td>Lateralized subtraction</td></tr>
+      <tr><td>N2</td><td>Negative</td><td>200–350</td><td>Conflict detection, inhibition</td><td>Go/No-Go tasks</td></tr>
+      <tr><td>LRP</td><td>Varies</td><td>200–400</td><td>Motor response preparation</td><td>Contralateral motor cortex</td></tr>
+      <tr><td>P3 / P300</td><td>Positive</td><td>300–600</td><td>Target detection, attention</td><td>P3a (frontal), P3b (parietal)</td></tr>
+      <tr><td>CDA</td><td>Negative</td><td>300–1000+</td><td>Visual working memory</td><td>Sustained contralateral activity</td></tr>
+      <tr><td>N400</td><td>Negative</td><td>~400</td><td>Semantic processing</td><td>Language comprehension</td></tr>
+      <tr><td>LPP</td><td>Positive</td><td>400–1000+</td><td>Emotion, motivational relevance</td><td>Posterior scalp</td></tr>
+      <tr><td>CNV</td><td>Negative</td><td>–500 to 0 (pre-stimulus)</td><td>Expectation, preparation</td><td>Slow negative build-up</td></tr>
+      <tr><td>SPN</td><td>Negative</td><td>–1000 to 0</td><td>Anticipation of feedback</td><td>Slow potential, pre-outcome</td></tr>
+      <tr><td>ERN / Ne</td><td>Negative</td><td>0–100 post-response</td><td>Error detection</td><td>Response-locked</td></tr>
+      <tr><td>Pe</td><td>Positive</td><td>200–400 post-response</td><td>Error awareness</td><td>Follows ERN</td></tr>
     </tbody>
   </table>
 
   <footer>
-    <p><strong>Source:</strong> Luck, S. J. (2014). <em>An Introduction to the Event-Related Potential Technique</em> (2nd ed.). MIT Press.</p>
-    <p>Back to <a href="index.html">Home</a></p>
+    <p><strong>Reference:</strong> Luck, S. J. (2014). <em>An Introduction to the Event-Related Potential Technique</em> (2nd ed.). MIT Press.</p>
+    <p><a href="index.html">Back to Home</a></p>
   </footer>
 
 </body>
