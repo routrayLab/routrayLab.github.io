@@ -1,4 +1,4 @@
-
+<!-- tutorials.html (updated) -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,6 +14,7 @@
     img { max-width: 100%; border-radius: 8px; margin-bottom: 1em;}
     .footer { text-align: center; color: #888; margin: 2em 0 0 0; }
     .tutorial { margin-bottom: 2em; }
+    .note-link { display: inline-block; margin-top: 0.5em; }
   </style>
 </head>
 <body>
@@ -23,20 +24,30 @@
     <a href="concepts.html">Concepts</a>
     <a href="about.html">About Me</a>
   </nav>
+
   <div class="container">
     <h1>Tutorials</h1>
+
     <div class="tutorial">
       <h2>Python Basics</h2>
       <img src="images/python_basics.png" alt="Python Basics Screenshot">
       <p>Learn the fundamentals of Python programming.</p>
-      <a href="notes/python_basics.pdf" target="_blank">Download PDF Notes</a>
+      <a class="note-link" href="notes/python_basics.pdf" target="_blank">Download PDF Notes</a>
       <br>
-      <a href="https://youtu.be/kqtD5dpn9C8" target="_blank">Watch on YouTube</a>
+      <a class="note-link" href="https://youtu.be/kqtD5dpn9C8" target="_blank">Watch on YouTube</a>
+
       <div style="margin-top:1em;">
         <iframe width="350" height="200" src="https://www.youtube.com/embed/kqtD5dpn9C8" frameborder="0" allowfullscreen></iframe>
       </div>
+
+      <!-- NEW: link to the matrix-inverse explanation page -->
+      <div style="margin-top:1em;">
+        <a class="note-link" href="matrix_inverse_by_solving.html">Matrix Inverse via Solving Linear Systems</a>
+      </div>
     </div>
+
   </div>
+
   <div class="footer">
     &copy; 2025 PKR
   </div>

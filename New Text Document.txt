@@ -1,0 +1,129 @@
+<!-- matrix_inverse_by_solving.html (new file) -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Matrix Inverse via Solving Linear Systems</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 0; padding: 0; background: #f4f6f8; }
+    nav { background: #2c5282; color: white; padding: 1em; }
+    nav a { color: white; margin: 0 1em; text-decoration: none; font-weight: bold;}
+    nav a:hover { text-decoration: underline; }
+    .container { max-width: 900px; margin: 2em auto; background: white; padding: 2em; border-radius: 10px; box-shadow: 0 0 10px #aaa; }
+    h1, h2, h3 { color: #2c5282; }
+    p, li { line-height: 1.6; }
+    code, pre { font-family: "Courier New", monospace; }
+    .math { background: #f7fafc; border: 1px solid #e2e8f0; padding: 1em; border-radius: 8px; overflow-x: auto; }
+    .footer { text-align: center; color: #888; margin: 2em 0 0 0; padding-bottom: 1em; }
+    .note { color: #444; background: #fffaf0; border: 1px solid #fbd38d; padding: 1em; border-radius: 8px; }
+  </style>
+</head>
+<body>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="tutorials.html">Tutorials</a>
+    <a href="concepts.html">Concepts</a>
+    <a href="about.html">About Me</a>
+  </nav>
+
+  <div class="container">
+    <h1>Matrix Inverse via Solving Linear Systems</h1>
+
+    <p>
+      Let <span class="math">A ∈ ℝ<sup>n×n</sup></span> be <strong>nonsingular</strong> (invertible). Then the inverse exists and is unique, and
+      <span class="math">A<sup>−1</sup>A = I</span> and <span class="math">AA<sup>−1</sup> = I</span>.
+    </p>
+
+    <h2>Column-wise formulation</h2>
+    <p>Write the inverse as a matrix of unknown columns:</p>
+    <div class="math">
+      A<sup>−1</sup> = [x<sub>1</sub> x<sub>2</sub> ⋯ x<sub>n</sub>], &nbsp;&nbsp; x<sub>i</sub> ∈ ℝ<sup>n</sup>.
+    </div>
+
+    <p>Write the identity matrix using standard basis vectors:</p>
+    <div class="math">
+      I = [e<sub>1</sub> e<sub>2</sub> ⋯ e<sub>n</sub>],
+    </div>
+    <p>
+      where <span class="math">e<sub>i</sub></span> is the vector with a 1 at entry <span class="math">i</span> and zeros elsewhere.
+    </p>
+
+    <p>Using <span class="math">AA<sup>−1</sup> = I</span>:</p>
+    <div class="math">
+      A[x<sub>1</sub> x<sub>2</sub> ⋯ x<sub>n</sub>] = [e<sub>1</sub> e<sub>2</sub> ⋯ e<sub>n</sub>].
+    </div>
+
+    <p>Matrix multiplication acts column-by-column, so this is equivalent to <strong>n independent linear systems</strong>:</p>
+    <div class="math">
+      Ax<sub>1</sub> = e<sub>1</sub><br>
+      Ax<sub>2</sub> = e<sub>2</sub><br>
+      ⋮<br>
+      Ax<sub>n</sub> = e<sub>n</sub>
+    </div>
+
+    <div class="note">
+      <strong>Uniqueness:</strong> Because <span class="math">A</span> is nonsingular, each system <span class="math">Ax<sub>i</sub>=e<sub>i</sub></span>
+      has a unique solution.
+    </div>
+
+    <h2>Solve efficiently using one factorization</h2>
+    <p>
+      Instead of solving each system from scratch, factorize <span class="math">A</span> once and reuse the factorization for all right-hand sides.
+    </p>
+
+    <h3>LU factorization (with pivoting)</h3>
+    <p>In practice, compute:</p>
+    <div class="math">
+      PA = LU,
+    </div>
+    <p>
+      where <span class="math">P</span> is a permutation matrix, <span class="math">L</span> is lower triangular, and <span class="math">U</span> is upper triangular.
+      For each <span class="math">i</span>:
+    </p>
+    <div class="math">
+      Ax<sub>i</sub> = e<sub>i</sub>
+      ⇔ PAx<sub>i</sub> = Pe<sub>i</sub>
+      ⇔ LUx<sub>i</sub> = Pe<sub>i</sub>.
+    </div>
+    <p>Solve in two triangular steps:</p>
+    <ul>
+      <li><strong>Forward substitution:</strong> solve <span class="math">Ly<sub>i</sub> = Pe<sub>i</sub></span></li>
+      <li><strong>Backward substitution:</strong> solve <span class="math">Ux<sub>i</sub> = y<sub>i</sub></span></li>
+    </ul>
+
+    <h3>QR factorization</h3>
+    <p>Compute:</p>
+    <div class="math">
+      A = QR,
+    </div>
+    <p>
+      with <span class="math">Q</span> orthonormal and <span class="math">R</span> upper triangular. For each <span class="math">i</span>:
+    </p>
+    <div class="math">
+      Ax<sub>i</sub> = e<sub>i</sub>
+      ⇔ QRx<sub>i</sub> = e<sub>i</sub>
+      ⇔ Rx<sub>i</sub> = Q<sup>T</sup>e<sub>i</sub>,
+    </div>
+    <p>then solve <span class="math">Rx<sub>i</sub> = Q<sup>T</sup>e<sub>i</sub></span> by backward substitution.</p>
+
+    <h2>Assemble the inverse</h2>
+    <p>After computing all columns, stack them to form the inverse:</p>
+    <div class="math">
+      A<sup>−1</sup> = [x<sub>1</sub> x<sub>2</sub> ⋯ x<sub>n</sub>].
+    </div>
+
+    <h2>References</h2>
+    <ul>
+      <li>Golub, G. H., &amp; Van Loan, C. F. (2013). <em>Matrix Computations</em> (4th ed.). Johns Hopkins University Press.</li>
+      <li>Trefethen, L. N., &amp; Bau, D. (1997). <em>Numerical Linear Algebra</em>. SIAM.</li>
+    </ul>
+
+    <p><a href="tutorials.html">← Back to Tutorials</a></p>
+  </div>
+
+  <div class="footer">
+    &copy; 2025 PKR
+  </div>
+</body>
+</html>
