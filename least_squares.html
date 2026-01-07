@@ -1,0 +1,240 @@
+<!-- least_squares.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Least Squares (Full Derivation)</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 0; padding: 0; background: #f4f6f8; }
+    nav { background: #2c5282; color: white; padding: 1em; }
+    nav a { color: white; margin: 0 1em; text-decoration: none; font-weight: bold; }
+    nav a:hover { text-decoration: underline; }
+
+    .container {
+      max-width: 920px;
+      margin: 2em auto;
+      background: white;
+      padding: 2em;
+      border-radius: 10px;
+      box-shadow: 0 0 10px #aaa;
+    }
+
+    h1, h2, h3 { color: #2c5282; }
+    p, li { line-height: 1.6; color: #222; }
+
+    .math {
+      background: #f7fafc;
+      border: 1px solid #e2e8f0;
+      padding: 1em;
+      border-radius: 8px;
+      overflow-x: auto;
+      margin: 0.75em 0;
+      color: #111;
+    }
+
+    .callout {
+      background: #fffaf0;
+      border: 1px solid #fbd38d;
+      padding: 1em;
+      border-radius: 8px;
+      margin: 1em 0;
+    }
+
+    .callout strong { color: #7b341e; }
+
+    .footer {
+      text-align: center;
+      color: #888;
+      margin: 2em 0 0 0;
+      padding-bottom: 1em;
+    }
+
+    a.inline-link { color: #2c5282; text-decoration: none; font-weight: bold; }
+    a.inline-link:hover { text-decoration: underline; }
+  </style>
+</head>
+
+<body>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="tutorials.html">Tutorials</a>
+    <a href="concepts.html">Concepts</a>
+    <a href="about.html">About Me</a>
+  </nav>
+
+  <div class="container">
+    <h1>Least Squares (Full Derivation)</h1>
+
+    <h2>0) Notation</h2>
+    <p>
+      Let <span class="math">A ∈ ℝ<sup>m×n</sup></span> and <span class="math">b ∈ ℝ<sup>m</sup></span>.
+      View <span class="math">A</span> as a linear map
+      <span class="math">A : ℝ<sup>n</sup> → ℝ<sup>m</sup>, x ↦ Ax</span>.
+    </p>
+    <p>
+      The following three names refer to the same subspace of <span class="math">ℝ<sup>m</sup></span>:
+    </p>
+    <div class="math">
+      Col(A) = span{columns of A}<br/>
+      Range(A) = { Ax : x ∈ ℝ<sup>n</sup> }<br/>
+      Im(A) = { Ax : x ∈ ℝ<sup>n</sup> }<br/><br/>
+      <strong>Therefore: Col(A) = Range(A) = Im(A).</strong>
+    </div>
+
+    <h2>1) Exact solvability vs. least squares</h2>
+    <p>
+      The linear system <span class="math">Ax = b</span> has an <strong>exact</strong> solution if and only if
+      <span class="math">b</span> lies in the range (image / column space) of <span class="math">A</span>:
+    </p>
+    <div class="math">
+      ∃x such that Ax = b  ⇔  b ∈ Range(A)  (equivalently, b ∈ Col(A)).
+    </div>
+
+    <p>
+      If <span class="math">b ∉ Range(A)</span>, the system is <strong>inconsistent</strong> (no exact solution).
+      In that case, we look for the best approximation by solving the <strong>least squares</strong> problem:
+    </p>
+    <div class="math">
+      x* = argmin<sub>x ∈ ℝ<sup>n</sup></sub> ‖Ax − b‖<sub>2</sub><sup>2</sup>.
+    </div>
+    <p>
+      Define the residual <span class="math">r(x) = b − Ax</span>. Least squares chooses <span class="math">x*</span>
+      that minimizes <span class="math">‖r(x)‖<sub>2</sub></span>.
+    </p>
+
+    <div class="callout">
+      <strong>Important correction:</strong>
+      “No exact solution” does <strong>not</strong> mean “the columns of A are not linearly independent.”
+      <ul>
+        <li>No exact solution means <span class="math">b ∉ Range(A)</span>.</li>
+        <li>Linear independence / rank controls <strong>uniqueness</strong> of solutions (and numerical stability), not whether a given <span class="math">b</span> is solvable.</li>
+      </ul>
+    </div>
+
+    <h2>2) The Projection Theorem (geometry)</h2>
+    <p>
+      Let <span class="math">S = Range(A) ⊆ ℝ<sup>m</sup></span>.
+      The vectors of the form <span class="math">Ax</span> are exactly the vectors in <span class="math">S</span>.
+    </p>
+    <p>
+      The Projection Theorem says: for any <span class="math">b</span> and any subspace <span class="math">S</span>,
+      there exists a unique vector <span class="math">p ∈ S</span> such that
+      <span class="math">b − p</span> is orthogonal to <span class="math">S</span>.
+      This <span class="math">p</span> is the closest point in <span class="math">S</span> to <span class="math">b</span>.
+    </p>
+    <p>
+      For least squares, the best fit satisfies <span class="math">Ax* = p</span>, and the optimal residual
+      <span class="math">r* = b − Ax*</span> obeys:
+    </p>
+    <div class="math">
+      r* ⟂ Range(A).
+    </div>
+
+    <h2>3) From orthogonality to the normal equations</h2>
+    <p>
+      The condition <span class="math">r* ⟂ Range(A)</span> means the residual is orthogonal to every column of
+      <span class="math">A</span>. This is equivalent to:
+    </p>
+    <div class="math">
+      A<sup>T</sup> r* = 0
+      ⇔ A<sup>T</sup>(b − Ax*) = 0
+      ⇔ A<sup>T</sup>A x* = A<sup>T</sup>b.
+    </div>
+    <p>
+      The equation
+      <span class="math">A<sup>T</sup>A x* = A<sup>T</sup>b</span>
+      is called the <strong>normal equation</strong>.
+    </p>
+
+    <h2>4) Uniqueness (what rank controls)</h2>
+    <ul>
+      <li>
+        If <span class="math">rank(A) = n</span> (full column rank), then <span class="math">A<sup>T</sup>A</span> is invertible and the least-squares minimizer <span class="math">x*</span> is <strong>unique</strong>.
+      </li>
+      <li>
+        If <span class="math">rank(A) &lt; n</span>, minimizers still exist, but they are generally <strong>not unique</strong>
+        (different <span class="math">x</span> can produce the same best-fit vector <span class="math">Ax</span>).
+      </li>
+    </ul>
+
+    <h2>5) Computing x* without matrix inversion (LU/Cholesky or QR)</h2>
+    <p>
+      The goal is to compute <span class="math">x*</span> using a factorization and substitutions, not by forming any matrix inverse explicitly.
+    </p>
+
+    <h3>Route A: Normal equations + solve (LU / Cholesky)</h3>
+    <p>
+      Start from the normal equation:
+    </p>
+    <div class="math">
+      (A<sup>T</sup>A) x* = A<sup>T</sup>b.
+    </div>
+    <p>
+      Let <span class="math">G = A<sup>T</sup>A</span> and <span class="math">c = A<sup>T</sup>b</span>, then solve:
+      <span class="math">Gx = c</span>.
+    </p>
+    <ul>
+      <li>If <span class="math">rank(A) = n</span>, then <span class="math">G</span> is symmetric positive definite, so <strong>Cholesky</strong> is natural: <span class="math">G = LL<sup>T</sup></span>, then solve <span class="math">Ly = c</span> and <span class="math">L<sup>T</sup>x = y</span>.</li>
+      <li>Otherwise, you can use <strong>LU with pivoting</strong> on <span class="math">G</span>, but QR is typically preferred for numerical stability.</li>
+    </ul>
+
+    <h3>Route B: QR factorization (standard and stable)</h3>
+    <p>
+      Compute the “thin” QR factorization:
+    </p>
+    <div class="math">
+      A = QR,
+    </div>
+    <p>
+      where <span class="math">Q ∈ ℝ<sup>m×n</sup></span> has orthonormal columns (<span class="math">Q<sup>T</sup>Q = I</span>) and
+      <span class="math">R ∈ ℝ<sup>n×n</sup></span> is upper triangular.
+    </p>
+    <p>
+      Using orthogonality, the least-squares minimizer (full column rank case) is obtained by solving the triangular system:
+    </p>
+    <div class="math">
+      R x* = Q<sup>T</sup>b,
+    </div>
+    <p>
+      which is solved by <strong>back substitution</strong>.
+    </p>
+
+    <h2>6) What least squares returns</h2>
+    <p>
+      Even when <span class="math">Ax = b</span> has no exact solution, least squares returns an <span class="math">x*</span> such that
+      <span class="math">Ax*</span> is the closest vector to <span class="math">b</span> that lies in <span class="math">Range(A)</span>,
+      and the residual <span class="math">r* = b − Ax*</span> is orthogonal to <span class="math">Range(A)</span>.
+    </p>
+
+    <h2>7) How this links cleanly to your “inverse by solving” page</h2>
+    <p>
+      The core computational idea is identical:
+    </p>
+    <ul>
+      <li>
+        <strong>Inverse-by-solving:</strong> solve <span class="math">Ax = e<sub>i</sub></span> repeatedly using a factorization + forward/back substitution, then stack solutions as columns.
+      </li>
+      <li>
+        <strong>Least squares:</strong> solve a linear system produced by a factorization:
+        <ul>
+          <li>Normal equations route: solve <span class="math">(A<sup>T</sup>A)x = A<sup>T</sup>b</span> via LU/Cholesky.</li>
+          <li>QR route: solve <span class="math">Rx = Q<sup>T</sup>b</span> via back substitution.</li>
+        </ul>
+      </li>
+    </ul>
+    <p>
+      Related page:
+      <a class="inline-link" href="matrix_inverse_by_solving.html">Matrix Inverse via Solving Linear Systems</a>
+    </p>
+
+    <p style="margin-top:1.5em;">
+      <a class="inline-link" href="tutorials.html">← Back to Tutorials</a>
+    </p>
+  </div>
+
+  <div class="footer">
+    &copy; 2025 PKR
+  </div>
+</body>
+</html>
