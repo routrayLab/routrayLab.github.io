@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Research Computation | Prasanna Routray</title>
+  <meta name="description" content="Computational research themes of Dr. Prasanna Routray: sensor calibration, sensor modeling, preimage-based estimation, robot localization, signal filtering, trajectory estimation, and multimodal fusion.">
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f4f6f8;
+      color: #222;
+    }
+
+    nav {
+      background: #2c5282;
+      color: white;
+      padding: 1em;
+    }
+
+    nav a {
+      color: white;
+      margin: 0 1em;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    .container {
+      max-width: 960px;
+      margin: 2em auto;
+      background: white;
+      padding: 2em;
+      border-radius: 10px;
+      box-shadow: 0 0 10px #aaa;
+    }
+
+    h1 {
+      color: #2c5282;
+      margin-top: 0;
+    }
+
+    h2 {
+      color: #2b6cb0;
+      margin-top: 1.8em;
+      border-bottom: 2px solid #e2e8f0;
+      padding-bottom: 0.3em;
+    }
+
+    p {
+      line-height: 1.6;
+    }
+
+    .back-link {
+      display: inline-block;
+      margin-bottom: 1em;
+      color: #2b6cb0;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .back-link:hover {
+      text-decoration: underline;
+    }
+
+    .section {
+      margin-bottom: 2em;
+    }
+
+    .section img {
+      width: 100%;
+      max-height: 320px;
+      object-fit: cover;
+      border-radius: 8px;
+      background: #e2e8f0;
+      margin: 0.8em 0 1em 0;
+    }
+
+    .caption {
+      font-size: 0.9em;
+      color: #666;
+      margin-top: -0.5em;
+      margin-bottom: 1em;
+    }
+
+    .equation-box {
+      background: #edf2f7;
+      border-left: 5px solid #2b6cb0;
+      padding: 1em 1.2em;
+      margin: 1em 0;
+      border-radius: 6px;
+      font-family: "Courier New", monospace;
+      overflow-x: auto;
+    }
+
+    ul {
+      line-height: 1.65;
+    }
+
+    .footer {
+      text-align: center;
+      color: #888;
+      margin: 2em 0 0 0;
+    }
+
+    @media (max-width: 850px) {
+      nav a {
+        display: inline-block;
+        margin: 0.4em 0.6em;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="research.html">Research</a>
+    <a href="publications.html">Publications</a>
+    <a href="cv.html">CV</a>
+    <a href="teaching.html">Teaching</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+
+  <div class="container">
+
+    <a class="back-link" href="research.html">&larr; Back to Research Overview</a>
+
+    <h1>Computation</h1>
+
+    <p>
+      This part of my research focuses on the computational interpretation of sensing systems.
+      The aim is to convert raw sensor measurements into physically meaningful, task-relevant,
+      and uncertainty-aware information for robotics, tactile perception, localization, and
+      human-centred sensing.
+    </p>
+
+    <div class="section">
+      <h2>Sensor Calibration and Common Representation</h2>
+
+      <img src="images/computation_sensor_calibration.png" alt="Sensor calibration and common representation">
+
+      <p class="caption">
+        Image placeholder: insert a calibration plot, bending-moment mapping, or sensor-response comparison.
+      </p>
+
+      <p>
+        Sensor calibration connects raw measurements to interpretable physical quantities.
+        For whisker-like sensors, different sensing mechanisms may produce different raw outputs,
+        such as pressure, magnetic field variation, visual displacement, or acceleration.
+      </p>
+
+      <p>
+        A common computational goal is to map these heterogeneous outputs into a comparable
+        representation, such as bending moment at the whisker base. This allows different sensor
+        designs to be compared and used within the same interpretation framework.
+      </p>
+    </div>
+
+    <div class="section">
+      <h2>Sensor Models and Virtual Whisker Models</h2>
+
+      <img src="images/computation_sensor_model.png" alt="Sensor model and virtual whisker model">
+
+      <p class="caption">
+        Image placeholder: insert a figure showing whisker deformation, contact geometry, or virtual sensor models.
+      </p>
+
+      <p>
+        Sensor modeling is used to describe the relationship between physical contact, sensor
+        deformation, and measured output. For whisker sensing, this involves the mechanics of a
+        slender beam, the location of contact, the deformation shape, and the observation produced
+        by the sensor.
+      </p>
+
+      <p>
+        A sensor model can be treated as a mapping from the state of the robot-sensor-environment
+        system to the observation produced by the sensor.
+      </p>
+
+      <div class="equation-box">
+        observation = sensor model(state)
+        <br>
+        z = h(q)
+      </div>
+
+      <p>
+        Here, the state may include robot pose, whisker configuration, contact point, and environment
+        geometry. The observation may include bending moment, contact location, deflection, slope,
+        force, or other measurable quantities.
+      </p>
+    </div>
+
+    <div class="section">
+      <h2>Preimage-Based State Estimation</h2>
+
+      <img src="images/computation_preimage_estimation.png" alt="Preimage-based state estimation">
+
+      <p class="caption">
+        Image placeholder: insert a figure showing observation preimages, feasible state sets, or state-space partitioning.
+      </p>
+
+      <p>
+        Many sensing problems are ambiguous: one observation can correspond to many possible states.
+        Instead of forcing a single answer, preimage-based estimation represents all states that are
+        consistent with a measurement.
+      </p>
+
+      <div class="equation-box">
+        preimage of observation z = all states q such that h(q) = z
+      </div>
+
+      <p>
+        This idea is useful for contact-based sensing, where a whisker observation may not uniquely
+        determine the robot pose or contact geometry. The preimage gives a structured way to describe
+        uncertainty and ambiguity in the sensing process.
+      </p>
+    </div>
+
+    <div class="section">
+      <h2>Robot Localization</h2>
+
+      <img src="images/computation_robot_localization.png" alt="Robot localization using whisker sensing">
+
+      <p class="caption">
+        Image placeholder: insert a localization figure, robot trajectory, feasible state contraction, or map interaction.
+      </p>
+
+      <p>
+        Robot localization asks where the robot is, given sensory observations and motion information.
+        In tactile localization, the robot may use contact observations from whisker-like sensors instead
+        of relying only on vision or LiDAR.
+      </p>
+
+      <p>
+        The computational idea is to update the feasible set of robot states as new observations arrive.
+        As the robot moves, each new tactile observation constrains the possible robot states. Repeated
+        observations can reduce uncertainty and improve localization.
+      </p>
+
+      <div class="equation-box">
+        feasible states after new observation
+        =
+        previous feasible states ∩ current observation preimage
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>Signal Separation and Filtering</h2>
+
+      <img src="images/computation_signal_filtering.png" alt="Signal separation and filtering for whisker sensors">
+
+      <p class="caption">
+        Image placeholder: insert a signal-processing figure, filtering result, or intrinsic/extrinsic response separation diagram.
+      </p>
+
+      <p>
+        Whisker sensors can respond to both external stimuli and internal platform motion.
+        For example, a mobile robot may produce base vibrations while the whisker also senses
+        contact, airflow, surface interaction, or terrain information.
+      </p>
+
+      <p>
+        Computational filtering is needed to separate intrinsic responses caused by robot motion
+        from extrinsic responses caused by the environment. This supports more reliable use of
+        whisker sensors in real robotic systems.
+      </p>
+    </div>
+
+    <div class="section">
+      <h2>Trajectory Estimation for Ball Catching</h2>
+
+      <img src="images/computation_ball_trajectory.png" alt="Ball trajectory estimation for robotic catching">
+
+      <p class="caption">
+        Image placeholder: insert a ball trajectory prediction figure, Kinect tracking result, or catching-point estimation plot.
+      </p>
+
+      <p>
+        In robotic ball catching, computation links perception to action. The robot must detect
+        the flying ball, estimate its trajectory, predict a feasible catching point, and move the
+        manipulator to intercept the ball.
+      </p>
+
+      <p>
+        This problem combines visual sensing, state estimation, trajectory prediction, reachable-space
+        reasoning, and control. It is an example of how sensing and computation can be connected to
+        fast robotic action.
+      </p>
+    </div>
+
+    <div class="section">
+      <h2>Multimodal Fusion and Texture Classification</h2>
+
+      <img src="images/computation_multimodal_fusion.png" alt="Multimodal fusion and texture classification">
+
+      <p class="caption">
+        Image placeholder: insert a VisTaNet architecture figure, texture-classification pipeline, or visual-tactile fusion diagram.
+      </p>
+
+      <p>
+        Texture perception can benefit from combining multiple sensing modalities. Visual sensing can
+        capture global surface information, while tactile sensing can capture local interaction details.
+      </p>
+
+      <p>
+        This research direction includes tactile-only classification, visual-only classification,
+        visual-tactile fusion, attention-guided feature fusion, and machine learning methods for
+        roughness and hardness perception.
+      </p>
+    </div>
+
+    <h2>Computation Keywords</h2>
+
+    <ul>
+      <li>Sensor calibration</li>
+      <li>Bending-moment representation</li>
+      <li>Sensor modeling</li>
+      <li>Virtual whisker models</li>
+      <li>Contact geometry</li>
+      <li>Preimage-based estimation</li>
+      <li>State-space interpretation</li>
+      <li>Robot localization</li>
+      <li>Uncertainty-aware sensing</li>
+      <li>Signal separation</li>
+      <li>Adaptive filtering</li>
+      <li>Trajectory estimation</li>
+      <li>Kalman filtering</li>
+      <li>Visual-tactile fusion</li>
+      <li>Texture classification</li>
+      <li>Machine learning for tactile perception</li>
+    </ul>
+
+  </div>
+
+  <div class="footer">
+    &copy; 2026 PKR
+  </div>
+
+</body>
+</html>

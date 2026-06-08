@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Research Design | Prasanna Routray</title>
+  <meta name="description" content="Research design themes of Dr. Prasanna Routray: bio-inspired whisker sensors, modular sensing architecture, haptic sensors, vibrometer design, and robotic experimental platforms.">
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f4f6f8;
+      color: #222;
+    }
+
+    nav {
+      background: #2c5282;
+      color: white;
+      padding: 1em;
+    }
+
+    nav a {
+      color: white;
+      margin: 0 1em;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    .container {
+      max-width: 960px;
+      margin: 2em auto;
+      background: white;
+      padding: 2em;
+      border-radius: 10px;
+      box-shadow: 0 0 10px #aaa;
+    }
+
+    h1 {
+      color: #2c5282;
+      margin-top: 0;
+    }
+
+    h2 {
+      color: #2b6cb0;
+      margin-top: 1.8em;
+      border-bottom: 2px solid #e2e8f0;
+      padding-bottom: 0.3em;
+    }
+
+    p {
+      line-height: 1.6;
+    }
+
+    .back-link {
+      display: inline-block;
+      margin-bottom: 1em;
+      color: #2b6cb0;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .back-link:hover {
+      text-decoration: underline;
+    }
+
+    .section {
+      margin-bottom: 2em;
+    }
+
+    .section img {
+      width: 100%;
+      max-height: 320px;
+      object-fit: cover;
+      border-radius: 8px;
+      background: #e2e8f0;
+      margin: 0.8em 0 1em 0;
+    }
+
+    .caption {
+      font-size: 0.9em;
+      color: #666;
+      margin-top: -0.5em;
+      margin-bottom: 1em;
+    }
+
+    ul {
+      line-height: 1.65;
+    }
+
+    .footer {
+      text-align: center;
+      color: #888;
+      margin: 2em 0 0 0;
+    }
+
+    @media (max-width: 850px) {
+      nav a {
+        display: inline-block;
+        margin: 0.4em 0.6em;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="research.html">Research</a>
+    <a href="publications.html">Publications</a>
+    <a href="cv.html">CV</a>
+    <a href="teaching.html">Teaching</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+
+  <div class="container">
+
+    <a class="back-link" href="research.html">&larr; Back to Research Overview</a>
+
+    <h1>Design</h1>
+
+    <p>
+      This part of my research focuses on the physical design of sensing systems and experimental
+      platforms. The aim is to build sensors and robotic systems that are simple, reproducible,
+      robust, and suitable for real interaction with the environment.
+    </p>
+
+    <div class="section">
+      <h2>Bio-Inspired Whisker Sensor Design</h2>
+
+      <img src="images/design_whisker_sensor.png" alt="Bio-inspired whisker sensor design">
+
+      <p class="caption">
+        Image placeholder: insert a figure showing whisker-like sensor prototypes or fabricated whisker sensor modules.
+      </p>
+
+      <p>
+        This theme focuses on whisker-like tactile sensors inspired by biological vibrissae.
+        These sensors are designed to detect contact, surface interaction, vibration, texture,
+        and environmental constraints through the deformation of a slender whisker element.
+      </p>
+
+      <p>
+        The design problem includes the selection of the whisker material, compliant element,
+        sensing element, support structure, and data acquisition system. The goal is to develop
+        whisker sensors that are durable, easy to fabricate, reconfigurable, and suitable for
+        experimental robotics.
+      </p>
+    </div>
+
+    <div class="section">
+      <h2>Modular Sensing Architecture</h2>
+
+      <img src="images/design_modular_architecture.png" alt="Modular sensing architecture">
+
+      <p class="caption">
+        Image placeholder: insert a schematic of the modular sensing architecture.
+      </p>
+
+      <p>
+        A central design idea is to treat a sensor as a modular system rather than a single
+        fixed device. In this view, the sensing system can be separated into functional blocks:
+        the physical interaction element, the compliant structure, the transduction mechanism,
+        the mechanical support, and the data acquisition unit.
+      </p>
+
+      <p>
+        This modular view makes it easier to compare different sensor designs, replace individual
+        components, and adapt the same core sensing idea to different tasks such as texture
+        analysis, mobile robot navigation, and contact-based vibration measurement.
+      </p>
+    </div>
+
+    <div class="section">
+      <h2>Sensor Transduction Mechanisms</h2>
+
+      <img src="images/design_transduction_mechanisms.png" alt="Sensor transduction mechanisms">
+
+      <p class="caption">
+        Image placeholder: insert a figure comparing pressure, magnetic, optical, accelerometer, or camera-based sensing.
+      </p>
+
+      <p>
+        My sensor design work explores multiple transduction mechanisms. These include pressure
+        sensing, Hall-effect magnetic sensing, accelerometer-based sensing, and vision-based
+        tactile sensing. Each method provides a different way to convert physical interaction
+        into measurable signals.
+      </p>
+
+      <p>
+        The design choice depends on the task. For example, rigid whiskers may be useful for
+        fine texture discrimination, while flexible whiskers may be better suited for exploratory
+        robots where robustness and repeated contact are important.
+      </p>
+    </div>
+
+    <div class="section">
+      <h2>Soft and Vision-Based Haptic Sensors</h2>
+
+      <img src="images/design_soft_haptic_sensor.png" alt="Soft and vision-based haptic sensor">
+
+      <p class="caption">
+        Image placeholder: insert a figure of Subblescope or another soft vision-based haptic sensor.
+      </p>
+
+      <p>
+        This research direction focuses on soft tactile sensors that use deformation as a source
+        of information. One example is a thin-film haptic sensor in which a camera observes
+        deformation inside a soft elastomeric structure.
+      </p>
+
+      <p>
+        Such sensors are useful for measuring contact force, shear interaction, surface properties,
+        and haptic interaction. The broader goal is to design tactile sensors that are compliant,
+        low-cost, and suitable for robotic manipulation or human-machine interaction.
+      </p>
+    </div>
+
+    <div class="section">
+      <h2>Contact-Based Vibrometer Design</h2>
+
+      <img src="images/design_vibrometer.png" alt="Whisker-based contact vibrometer design">
+
+      <p class="caption">
+        Image placeholder: insert a figure of the whisker-based contact vibrometer setup.
+      </p>
+
+      <p>
+        This theme investigates whisker-inspired sensors for contact-based vibration measurement.
+        The aim is to design a lightweight sensor that can touch a vibrating structure and measure
+        its response without significantly altering the dynamics of the system under test.
+      </p>
+
+      <p>
+        The design combines a flexible whisker-like probe with a sensing mechanism that captures
+        small deflections caused by vibration. This can support applications in vibration analysis,
+        structural monitoring, robotic exploration, and contact-based diagnostics.
+      </p>
+    </div>
+
+    <div class="section">
+      <h2>Robotic Experimental Platforms</h2>
+
+      <img src="images/design_robotic_platform.png" alt="Robotic experimental platform">
+
+      <p class="caption">
+        Image placeholder: insert a figure of a robot platform, Kinect-based ball-catching setup, mobile robot, or manipulator.
+      </p>
+
+      <p>
+        Sensor design is connected to experimental robotic platforms. These platforms allow sensing
+        concepts to be tested in complete perception-action loops, where the robot must observe,
+        estimate, decide, and act.
+      </p>
+
+      <p>
+        Examples include mobile platforms for tactile navigation, manipulators for vision-guided
+        interception, and experimental setups for texture exploration, vibrometry, and sensor
+        characterization.
+      </p>
+    </div>
+
+    <h2>Design Keywords</h2>
+
+    <ul>
+      <li>Bio-inspired sensing</li>
+      <li>Whisker-like tactile sensors</li>
+      <li>Modular sensor architecture</li>
+      <li>Compliant mechanisms</li>
+      <li>Pressure sensing</li>
+      <li>Hall-effect sensing</li>
+      <li>Vision-based tactile sensing</li>
+      <li>Soft haptic sensors</li>
+      <li>Contact-based vibrometer design</li>
+      <li>Robotic experimental platforms</li>
+    </ul>
+
+  </div>
+
+  <div class="footer">
+    &copy; 2026 PKR
+  </div>
+
+</body>
+</html>
