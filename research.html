@@ -3,79 +3,144 @@
 <head>
   <meta charset="UTF-8">
   <title>Research | Prasanna Routray</title>
-  <meta name="description" content="Research interests of Dr. Prasanna Routray in mechatronics, tactile sensing, robotics, and virtual reality.">
+  <meta name="description" content="Research overview of Dr. Prasanna Routray: sensing system design, computational modeling, and applications in robotics, tactile perception, localization, ball catching, vibrometry, and human-centred sensing.">
 
   <style>
-    body { 
-      font-family: Arial, sans-serif; 
-      margin: 0; 
-      padding: 0; 
-      background: #f4f6f8; 
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f4f6f8;
+      color: #222;
     }
 
-    nav { 
-      background: #2c5282; 
-      color: white; 
-      padding: 1em; 
+    nav {
+      background: #2c5282;
+      color: white;
+      padding: 1em;
     }
 
-    nav a { 
-      color: white; 
-      margin: 0 1em; 
-      text-decoration: none; 
+    nav a {
+      color: white;
+      margin: 0 1em;
+      text-decoration: none;
       font-weight: bold;
     }
 
-    nav a:hover { 
-      text-decoration: underline; 
+    nav a:hover {
+      text-decoration: underline;
     }
 
-    .container { 
-      max-width: 900px; 
-      margin: 2em auto; 
-      background: white; 
-      padding: 2em; 
-      border-radius: 10px; 
-      box-shadow: 0 0 10px #aaa; 
+    .container {
+      max-width: 960px;
+      margin: 2em auto;
+      background: white;
+      padding: 2em;
+      border-radius: 10px;
+      box-shadow: 0 0 10px #aaa;
     }
 
-    h1 { 
-      color: #2c5282; 
-      margin-top: 0; 
+    h1 {
+      color: #2c5282;
+      margin-top: 0;
     }
 
-    h2 { 
-      color: #2b6cb0; 
-      margin-top: 1.5em;
+    h2 {
+      color: #2b6cb0;
+      margin-top: 1.6em;
+    }
+
+    h3 {
+      color: #2c5282;
+      margin-top: 0;
     }
 
     p {
-      line-height: 1.55;
-      color: #333;
+      line-height: 1.6;
     }
 
-    .research-image {
+    .intro {
+      font-size: 1.05em;
+      margin-bottom: 1.5em;
+    }
+
+    .framework {
+      background: #edf2f7;
+      border-left: 5px solid #2b6cb0;
+      padding: 1em 1.2em;
+      margin: 1.5em 0;
+      border-radius: 6px;
+    }
+
+    .framework strong {
+      color: #2c5282;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.2em;
+      margin-top: 1.5em;
+    }
+
+    .card {
+      border: 1px solid #e2e8f0;
+      border-radius: 10px;
+      padding: 1.2em;
+      background: #ffffff;
+      box-shadow: 0 0 6px #ddd;
+    }
+
+    .card img {
       width: 100%;
-      max-width: 760px;
-      display: block;
-      margin: 1em auto 0.4em auto;
+      max-height: 180px;
+      object-fit: cover;
       border-radius: 8px;
-      box-shadow: 0 0 8px #bbb;
+      margin-bottom: 1em;
+      background: #e2e8f0;
     }
 
-    .caption {
-      max-width: 760px;
-      margin: 0 auto 1.5em auto;
-      color: #555;
-      font-size: 0.92em;
-      line-height: 1.4;
+    .card ul {
+      padding-left: 1.2em;
+      line-height: 1.55;
+    }
+
+    .card a {
+      display: inline-block;
+      margin-top: 0.8em;
+      color: #2b6cb0;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .card a:hover {
+      text-decoration: underline;
+    }
+
+    .topics {
+      columns: 2;
+      line-height: 1.65;
+    }
+
+    .footer {
       text-align: center;
+      color: #888;
+      margin: 2em 0 0 0;
     }
 
-    .footer { 
-      text-align: center; 
-      color: #888; 
-      margin: 2em 0 0 0; 
+    @media (max-width: 850px) {
+      .cards {
+        grid-template-columns: 1fr;
+      }
+
+      .topics {
+        columns: 1;
+      }
+
+      nav a {
+        display: inline-block;
+        margin: 0.4em 0.6em;
+      }
     }
   </style>
 </head>
@@ -92,66 +157,108 @@
   </nav>
 
   <div class="container">
+
     <h1>Research</h1>
 
-    <p>
-      My research focuses on mechatronics, tactile sensing, bio-inspired sensor systems,
-      robotics, human perception, and neurocognitive analysis in virtual reality.
+    <p class="intro">
+      My research connects sensing hardware, computational interpretation, and real-world applications.
+      The central goal is to build sensing systems that can physically interact with the world, convert
+      interaction into measurable signals, interpret those signals through mathematical and computational
+      models, and apply them to robotics, tactile perception, localization, human-centred sensing, and
+      immersive systems.
     </p>
 
-    <h2>Bio-Inspired Tactile Sensing</h2>
-    <p>
-      I work on whisker-like tactile sensors inspired by biological sensing systems.
-      These sensors can help robotic systems detect contact, texture, shape, and environmental interactions.
-    </p>
-
-    <img class="research-image" src="images/whisker_sensor_designs.png" alt="Whisker-like sensor design concepts and fabricated prototypes">
-    <div class="caption">
-      Whisker-like sensor design concepts and fabricated prototypes from my work on modular whisker sensor design.
+    <div class="framework">
+      <strong>Research framework:</strong>
+      Design &rarr; Computation &rarr; Application
+      <br><br>
+      <strong>Design</strong> focuses on how sensing systems are physically built.
+      <strong>Computation</strong> focuses on how signals are calibrated, modeled, filtered, estimated, and interpreted.
+      <strong>Application</strong> focuses on how these systems are used in robotics, perception, localization,
+      texture analysis, vibrometry, ball catching, and human-centred studies.
     </div>
 
-    <h2>Sensor Calibration and Texture Analysis</h2>
-    <p>
-      My work studies how raw sensor responses can be calibrated, interpreted, and compared across different sensing mechanisms.
-      A recurring goal is to connect sensor design, mechanical response, and task-level performance.
-    </p>
+    <h2>Research Areas</h2>
 
-    <img class="research-image" src="images/sensor_calibration_response.png" alt="Calibration response mapping magnetic flux density to bending moment">
-    <div class="caption">
-      Calibration response used to relate magnetic flux density to bending moment at the whisker base.
+    <div class="cards">
+
+      <div class="card">
+        <img src="images/research_design_overview.png" alt="Overview of sensing system design">
+        <h3>Design</h3>
+        <p>
+          This area covers the physical design of sensing systems and experimental platforms.
+        </p>
+        <ul>
+          <li>Bio-inspired whisker sensors</li>
+          <li>Modular sensing architecture</li>
+          <li>Soft and vision-based haptic sensors</li>
+          <li>Contact-based vibrometer design</li>
+          <li>Robotic experimental platforms</li>
+        </ul>
+        <a href="research_design.html">View Design Research</a>
+      </div>
+
+      <div class="card">
+        <img src="images/research_computation_overview.png" alt="Overview of sensor modeling and computation">
+        <h3>Computation</h3>
+        <p>
+          This area covers the mathematical and computational methods used to interpret sensor data.
+        </p>
+        <ul>
+          <li>Sensor calibration</li>
+          <li>Sensor modeling</li>
+          <li>Preimage-based state estimation</li>
+          <li>Robot localization</li>
+          <li>Signal filtering and fusion</li>
+          <li>Trajectory estimation</li>
+        </ul>
+        <a href="research_computation.html">View Computation Research</a>
+      </div>
+
+      <div class="card">
+        <img src="images/research_application_overview.png" alt="Overview of sensing applications">
+        <h3>Application</h3>
+        <p>
+          This area covers how sensing and computation are applied to real research problems.
+        </p>
+        <ul>
+          <li>Texture perception</li>
+          <li>Robot localization and navigation</li>
+          <li>Contact-based vibrometry</li>
+          <li>Ball catching robotics</li>
+          <li>Human physiological sensing</li>
+          <li>VR and human-centred perception studies</li>
+        </ul>
+        <a href="research_application.html">View Application Research</a>
+      </div>
+
     </div>
 
-    <img class="research-image" src="images/texture_experiment_setup.png" alt="Experimental setup for whisker-based surface texture analysis">
-    <div class="caption">
-      Experimental setup for whisker-based surface texture analysis using a linear stage, whisker sensor, and machined surface specimen.
-    </div>
+    <h2>Research Themes</h2>
 
-    <h2>Robotics and Mechatronics</h2>
-    <p>
-      My robotics research includes sensor integration, automation, perception systems,
-      and experimental platforms for intelligent physical interaction.
-    </p>
-
-    <img class="research-image" src="images/whisker_contact_point.png" alt="Whisker sensor contact point during interaction with an obstacle">
-    <div class="caption">
-      Whisker contact-point experiment showing sensor interaction with an obstacle.
-    </div>
-
-    <h2>Virtual Reality and Neurocognitive Analysis</h2>
-    <p>
-      I am also interested in studying human cognition and perception using virtual reality-based experimental systems.
-      This includes understanding how users perceive, interact, and respond in immersive environments.
-    </p>
-
-    <h2>Research Interests</h2>
-    <ul>
+    <ul class="topics">
       <li>Bio-inspired tactile sensing</li>
       <li>Whisker-like sensors</li>
-      <li>Robotic perception</li>
-      <li>Mechatronic system design</li>
-      <li>Human cognition in virtual reality</li>
-      <li>Sensor-based interaction systems</li>
+      <li>Sensor design and fabrication</li>
+      <li>Soft haptic sensing</li>
+      <li>Vision-based tactile sensing</li>
+      <li>Sensor calibration</li>
+      <li>Sensor modeling</li>
+      <li>Preimage-based sensing</li>
+      <li>Robot localization</li>
+      <li>Mobile robot navigation</li>
+      <li>Texture roughness and hardness perception</li>
+      <li>Visuo-tactile fusion</li>
+      <li>Signal separation and filtering</li>
+      <li>Contact-based vibration measurement</li>
+      <li>Ball trajectory estimation</li>
+      <li>Robotic ball catching</li>
+      <li>Virtual reality experiments</li>
+      <li>Human-centred sensing</li>
+      <li>Physiological signal analysis</li>
+      <li>Neurocognitive analysis</li>
     </ul>
+
   </div>
 
   <div class="footer">
