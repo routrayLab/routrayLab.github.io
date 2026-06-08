@@ -1,60 +1,130 @@
-<!-- tutorials.html (updated) -->
+```html
+<!-- tutorials.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Tutorials | My Tutorials Website</title>
+  <title>Courses | Prasanna Routray</title>
+  <meta name="description" content="Planned courses by Dr. Prasanna Routray in sensing, tracking, perception, robotics, virtual reality, and human-centred experimental methods.">
+
   <style>
-    body { font-family: Arial, sans-serif; margin: 0; padding: 0; background: #f4f6f8; }
-    nav { background: #2c5282; color: white; padding: 1em; }
-    nav a { color: white; margin: 0 1em; text-decoration: none; font-weight: bold;}
-    nav a:hover { text-decoration: underline; }
-    .container { max-width: 800px; margin: 2em auto; background: white; padding: 2em; border-radius: 10px; box-shadow: 0 0 10px #aaa; }
-    h1, h2 { color: #2c5282; }
-    img { max-width: 100%; border-radius: 8px; margin-bottom: 1em;}
-    .footer { text-align: center; color: #888; margin: 2em 0 0 0; }
-    .tutorial { margin-bottom: 2em; }
-    .note-link { display: inline-block; margin-top: 0.5em; }
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f4f6f8;
+    }
+
+    nav {
+      background: #2c5282;
+      color: white;
+      padding: 1em;
+    }
+
+    nav a {
+      color: white;
+      margin: 0 1em;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    .container {
+      max-width: 840px;
+      margin: 2em auto;
+      background: white;
+      padding: 2em;
+      border-radius: 10px;
+      box-shadow: 0 0 10px #aaa;
+    }
+
+    h1 {
+      color: #2c5282;
+      margin-top: 0;
+    }
+
+    h2 {
+      color: #2b6cb0;
+      margin-top: 1.4em;
+    }
+
+    .course {
+      margin-bottom: 2em;
+      padding-bottom: 1em;
+      border-bottom: 1px solid #e2e8f0;
+    }
+
+    .course:last-child {
+      border-bottom: none;
+    }
+
+    .course p {
+      line-height: 1.55;
+      color: #333;
+    }
+
+    .note-link {
+      display: inline-block;
+      margin-top: 0.5em;
+      color: #2b6cb0;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .note-link:hover {
+      text-decoration: underline;
+    }
+
+    .footer {
+      text-align: center;
+      color: #888;
+      margin: 2em 0 0 0;
+    }
   </style>
 </head>
+
 <body>
+
   <nav>
     <a href="index.html">Home</a>
-    <a href="tutorials.html">Tutorials</a>
+    <a href="tutorials.html">Courses</a>
     <a href="concepts.html">Concepts</a>
     <a href="about.html">About Me</a>
   </nav>
 
   <div class="container">
-    <h1>Tutorials</h1>
 
-    <div class="tutorial">
-      <h2>Python Basics</h2>
-      <img src="images/python_basics.png" alt="Python Basics Screenshot">
-      <p>Learn the fundamentals of Python programming.</p>
-      <a class="note-link" href="notes/python_basics.pdf" target="_blank">Download PDF Notes</a>
-      <br>
-      <a class="note-link" href="https://youtu.be/kqtD5dpn9C8" target="_blank">Watch on YouTube</a>
+    <h1>Courses</h1>
 
-      <div style="margin-top:1em;">
-        <iframe width="350" height="200" src="https://www.youtube.com/embed/kqtD5dpn9C8" frameborder="0" allowfullscreen></iframe>
-      </div>
+    <div class="course">
+      <h2>Fundamentals of Sensing and Tracking</h2>
+      <p>
+        This course introduces the physical and mathematical foundations of sensing systems,
+        including sensor principles, calibration, noise, uncertainty, filtering, tracking,
+        and sensor fusion.
+      </p>
+      <a class="note-link" href="fundamentals_sensing_tracking.html">Course Details</a>
+    </div>
 
-      <!-- NEW: link to the matrix-inverse explanation page -->
-      <div style="margin-top:1em;">
-        <a class="note-link" href="matrix_inverse.html">Matrix Inverse via Solving Linear Systems</a>
-      </div>
-	<!-- NEW: link to the matrix-inverse explanation page -->
-      <div style="margin-top:1em;">
-        <a class="note-link" href="least_squares.html">Least Squares Explained</a>
-      </div>
-
+    <div class="course">
+      <h2>From Sensing to Perception</h2>
+      <p>
+        This course focuses on how sensing systems are used to study human perception,
+        behaviour, and experience through experimental methods, virtual reality, haptics,
+        wearable sensors, EEG/ERP, and human-centred evaluation.
+      </p>
+      <a class="note-link" href="sensing_to_perception.html">Course Details</a>
     </div>
 
   </div>
 
   <div class="footer">
-    &copy; 2025 PKR
+    &copy; 2026 PKR
   </div>
+
 </body>
 </html>
+```
