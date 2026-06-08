@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -93,7 +94,7 @@
 
     .card img {
       width: 100%;
-      max-height: 180px;
+      height: 180px;
       object-fit: cover;
       border-radius: 8px;
       margin-bottom: 1em;
@@ -143,6 +144,7 @@
       }
     }
   </style>
+
 </head>
 
 <body>
@@ -158,106 +160,108 @@
 
   <div class="container">
 
-    <h1>Research</h1>
+```
+<h1>Research</h1>
 
-    <p class="intro">
-      My research connects sensing hardware, computational interpretation, and real-world applications.
-      The central goal is to build sensing systems that can physically interact with the world, convert
-      interaction into measurable signals, interpret those signals through mathematical and computational
-      models, and apply them to robotics, tactile perception, localization, human-centred sensing, and
-      immersive systems.
+<p class="intro">
+  My research connects sensing hardware, computational interpretation, and real-world applications.
+  The central goal is to build sensing systems that can physically interact with the world, convert
+  interaction into measurable signals, interpret those signals through mathematical and computational
+  models, and apply them to robotics, tactile perception, localization, human-centred sensing, and
+  immersive systems.
+</p>
+
+<div class="framework">
+  <strong>Research framework:</strong>
+  Design &rarr; Computation &rarr; Application
+  <br><br>
+  <strong>Design</strong> focuses on how sensing systems are physically built.
+  <strong>Computation</strong> focuses on how signals are calibrated, modeled, filtered, estimated, and interpreted.
+  <strong>Application</strong> focuses on how these systems are used in robotics, perception, localization,
+  texture analysis, vibrometry, ball catching, and human-centred studies.
+</div>
+
+<h2>Research Areas</h2>
+
+<div class="cards">
+
+  <div class="card">
+    <img src="images/research_design_overview.png" alt="Design of sensing systems">
+    <h3>Design</h3>
+    <p>
+      This area covers the physical design of sensing systems and experimental platforms.
     </p>
+    <ul>
+      <li>Bio-inspired whisker sensors</li>
+      <li>Modular sensing architecture</li>
+      <li>Soft and vision-based haptic sensors</li>
+      <li>Contact-based vibrometer design</li>
+      <li>Robotic experimental platforms</li>
+    </ul>
+    <a href="research_design.html">View Design Research</a>
+  </div>
 
-    <div class="framework">
-      <strong>Research framework:</strong>
-      Design &rarr; Computation &rarr; Application
-      <br><br>
-      <strong>Design</strong> focuses on how sensing systems are physically built.
-      <strong>Computation</strong> focuses on how signals are calibrated, modeled, filtered, estimated, and interpreted.
-      <strong>Application</strong> focuses on how these systems are used in robotics, perception, localization,
-      texture analysis, vibrometry, ball catching, and human-centred studies.
-    </div>
-
-    <h2>Research Areas</h2>
-
-    <div class="cards">
-
-      <div class="card">
-        <img src="images/research_design_overview.png" alt="Overview of sensing system design">
-        <h3>Design</h3>
-        <p>
-          This area covers the physical design of sensing systems and experimental platforms.
-        </p>
-        <ul>
-          <li>Bio-inspired whisker sensors</li>
-          <li>Modular sensing architecture</li>
-          <li>Soft and vision-based haptic sensors</li>
-          <li>Contact-based vibrometer design</li>
-          <li>Robotic experimental platforms</li>
-        </ul>
-        <a href="research_design.html">View Design Research</a>
-      </div>
-
-      <div class="card">
-        <img src="images/research_computation_overview.png" alt="Overview of sensor modeling and computation">
-        <h3>Computation</h3>
-        <p>
-          This area covers the mathematical and computational methods used to interpret sensor data.
-        </p>
-        <ul>
-          <li>Sensor calibration</li>
-          <li>Sensor modeling</li>
-          <li>Preimage-based state estimation</li>
-          <li>Robot localization</li>
-          <li>Signal filtering and fusion</li>
-          <li>Trajectory estimation</li>
-        </ul>
-        <a href="research_computation.html">View Computation Research</a>
-      </div>
-
-      <div class="card">
-        <img src="images/research_application_overview.png" alt="Overview of sensing applications">
-        <h3>Application</h3>
-        <p>
-          This area covers how sensing and computation are applied to real research problems.
-        </p>
-        <ul>
-          <li>Texture perception</li>
-          <li>Robot localization and navigation</li>
-          <li>Contact-based vibrometry</li>
-          <li>Ball catching robotics</li>
-          <li>Human physiological sensing</li>
-          <li>VR and human-centred perception studies</li>
-        </ul>
-        <a href="research_application.html">View Application Research</a>
-      </div>
-
-    </div>
-
-    <h2>Research Themes</h2>
-
-    <ul class="topics">
-      <li>Bio-inspired tactile sensing</li>
-      <li>Whisker-like sensors</li>
-      <li>Sensor design and fabrication</li>
-      <li>Soft haptic sensing</li>
-      <li>Vision-based tactile sensing</li>
+  <div class="card">
+    <img src="images/research_computation_overview.png" alt="Computation for sensor modeling and interpretation">
+    <h3>Computation</h3>
+    <p>
+      This area covers the mathematical and computational methods used to interpret sensor data.
+    </p>
+    <ul>
       <li>Sensor calibration</li>
       <li>Sensor modeling</li>
-      <li>Preimage-based sensing</li>
+      <li>Preimage-based state estimation</li>
       <li>Robot localization</li>
-      <li>Mobile robot navigation</li>
-      <li>Texture roughness and hardness perception</li>
-      <li>Visuo-tactile fusion</li>
-      <li>Signal separation and filtering</li>
-      <li>Contact-based vibration measurement</li>
-      <li>Ball trajectory estimation</li>
-      <li>Robotic ball catching</li>
-      <li>Virtual reality experiments</li>
-      <li>Human-centred sensing</li>
-      <li>Physiological signal analysis</li>
-      <li>Neurocognitive analysis</li>
+      <li>Signal filtering and fusion</li>
+      <li>Trajectory estimation</li>
     </ul>
+    <a href="research_computation.html">View Computation Research</a>
+  </div>
+
+  <div class="card">
+    <img src="images/research_application_overview.png" alt="Applications of sensing and perception research">
+    <h3>Application</h3>
+    <p>
+      This area covers how sensing and computation are applied to real research problems.
+    </p>
+    <ul>
+      <li>Texture perception</li>
+      <li>Robot localization and navigation</li>
+      <li>Contact-based vibrometry</li>
+      <li>Ball catching robotics</li>
+      <li>Human physiological sensing</li>
+      <li>VR and human-centred perception studies</li>
+    </ul>
+    <a href="research_application.html">View Application Research</a>
+  </div>
+
+</div>
+
+<h2>Research Themes</h2>
+
+<ul class="topics">
+  <li>Bio-inspired tactile sensing</li>
+  <li>Whisker-like sensors</li>
+  <li>Sensor design and fabrication</li>
+  <li>Soft haptic sensing</li>
+  <li>Vision-based tactile sensing</li>
+  <li>Sensor calibration</li>
+  <li>Sensor modeling</li>
+  <li>Preimage-based sensing</li>
+  <li>Robot localization</li>
+  <li>Mobile robot navigation</li>
+  <li>Texture roughness and hardness perception</li>
+  <li>Visuo-tactile fusion</li>
+  <li>Signal separation and filtering</li>
+  <li>Contact-based vibration measurement</li>
+  <li>Ball trajectory estimation</li>
+  <li>Robotic ball catching</li>
+  <li>Virtual reality experiments</li>
+  <li>Human-centred sensing</li>
+  <li>Physiological signal analysis</li>
+  <li>Neurocognitive analysis</li>
+</ul>
+```
 
   </div>
 
