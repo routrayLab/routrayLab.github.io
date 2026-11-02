@@ -11,7 +11,27 @@
 <body>
 <header><strong>The Sound Archive</strong><span>Exhibit 01 / Music from the Cloud</span></header>
 <main>
-<section class="hero"><div class="eyebrow">A reverse journey through recorded sound</div><h1>Where does a song live?</h1><p class="lead">You tap Play on your phone. A voice fills your headphones. Between the artist and your ears lies a remarkable chain of physics, mathematics, electronics, and communication.</p><a href="#journey">Enter the first exhibit ↓</a></section>
+<section class="hero">
+    <div class="eyebrow">A reverse journey through recorded sound</div>
+    <h1>Where does a song live?</h1>
+    <p class="lead">An exploration of how humanity learned to capture, preserve, and reproduce sound. Imagine listening to your favourite song through a pair of wireless headphones.
+        There is no spinning disc, no moving tape, and no visible connection to the source of the music. A small device receives information through electromagnetic waves, processes
+        it using microscopic electronic circuits, and recreates the voice of an artist who may have recorded the song years ago, thousands of kilometres away.
+        But where does the music actually exist before you press Play? Is it stored as sound? As electrical signals? As numbers? And how can those numbers eventually produce the familiar voice of a singer?
+        To answer these questions, we will follow the journey of a song through modern audio technology.
+        Then we will travel backward in time, from streaming services and miniature memory chips to compact discs and magnetic cassettes. Along the way, we will discover that the history of recorded music
+        is also a history of physics, materials, electronics, mathematics, and ingenious engineering.
+    </p>
+    <a href="#journey">Enter the first exhibit ↓</a>
+</section>
+
+
+
+
+
+
+
+
 <section class="wrap intro"><div class="eyebrow">The central question</div><h2>From a human voice to your headphones</h2><p>A singer creates changes in air pressure. A microphone converts those vibrations into a continuously varying electrical signal. Modern recording equipment represents that signal as numbers. Those numbers can be edited, stored, transmitted, decoded, and ultimately converted back into vibrations in air.</p><p>Follow the stages below. Select any station to explore what is physically happening there.</p></section>
 <section id="journey" class="wrap" style="padding-top:10px"><div class="eyebrow">Interactive exhibit · 01</div><h2>The modern signal journey</h2><div class="journey" id="stages"></div><div class="detail" id="detail" aria-live="polite"></div></section>
 <section class="wrap"><div class="eyebrow">Interactive exhibit · 02</div><h2>How do numbers describe sound?</h2><p>Digital recording measures the amplitude of a suitably filtered analog signal at regular time intervals. Move the slider to change the <em>illustrative</em> sampling density. This is not a demonstration of actual audio quality.</p><div class="panel"><label for="density">Illustrative sampling intervals: <output id="densityValue">16</output></label><input id="density" type="range" min="8" max="64" step="8" value="16"><svg id="wave" class="visual" viewBox="0 0 760 240" role="img" aria-label="Continuous waveform and discrete sample locations"></svg><p><span style="color:var(--teal)">━━</span> Continuous signal &nbsp; <span style="color:var(--gold)">●</span> Sample positions</p></div><div class="split" style="margin-top:24px"><article class="panel"><h3>Sampling</h3><p>For sampling frequency <em>f<sub>s</sub></em>, sample number <em>n</em> corresponds to time <em>n/f<sub>s</sub></em>.</p><div class="math">x[n] = x(n / f<sub>s</sub>)</div><p>CD audio uses 44,100 samples per second per channel. With appropriate band-limiting, sampling above twice the highest signal frequency permits ideal reconstruction.</p></article><article class="panel"><h3>Quantization</h3><p>Each sampled amplitude is represented with finite numerical precision. A 16-bit PCM sample has 65,536 possible codes. Dither can make quantization error behave more like noise rather than correlated distortion.</p><p><strong>Uncompressed stereo CD rate:</strong> 44,100 × 16 × 2 = 1,411,200 bits/s.</p></article></div></section>
